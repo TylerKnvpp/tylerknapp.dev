@@ -2,7 +2,7 @@
 
 ## How it Works
 
-This project is an interactive resume. It uses AI to answer questions about experience and projects in the first person. The LLM has access to a vectorized a text file containing context on how to answer.
+This project is an interactive resume. It uses AI to answer questions about experience and projects in the first person. The LLM has access to a vectorized text file containing context on how to answer.
 
 The application uses OpenAI's embedding model to generate embeddings for each line in the text file. These embeddings are then saved in a Supabase database. When a user asks a question, the application generates an embedding for the question and finds the most similar embeddings in the database. The lines of text associated with these embeddings are used as context for the AI to generate a response.
 
@@ -13,7 +13,7 @@ The application uses a Supabase table named embeddings to store embeddings. The 
 - text: The line of text that the embedding represents.
 - embedding: The embedding for the line of text.
 
-Thethe embedding column needs to have the correct length of the embedding vector and a SQL function, `vector_query`, needs to be added:
+The embedding column's default embedding vector length needs to be updated and a SQL function, `vector_query`, needs to be added to the database:
 
 ```sql
 -- OpenAI's embedding vector length
