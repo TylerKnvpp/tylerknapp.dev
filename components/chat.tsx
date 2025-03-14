@@ -46,9 +46,8 @@ export default function Chat() {
             <div
               key={m.id}
               className="py-2 px-3 rounded-lg bg-gray-200 text-slate-700 max-w-xs mx-2 my-6"
-            >
-              {m.content}
-            </div>
+              dangerouslySetInnerHTML={{ __html: m.content }}
+            />
           );
         })}
         {loading ? (

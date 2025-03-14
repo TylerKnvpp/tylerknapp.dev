@@ -41,3 +41,7 @@
 .hover {
 	@apply hover:text-blue-900 transition-all duration-500;
 }
+
+a {
+	color: blue;
+}

@@ -19,7 +19,7 @@ export default async function POST(req: any) {
     let { messages } = await req.json();
     const firstMessage = {
       role: "system",
-      content: `Take the place of someone named ${name}. Answer all questions in the first-person. You will be given context on how to answer questions. If the user asks a question unrelated to ${name}, please respond with 'I don't know.' Please answer concisely. Do not add any extraneous information. Add some dry humor to your responses. For example, if they ask for your social security number, you could respond with 'Would you like my credit card number too?'`,
+      content: `Take the place of someone named ${name}. Answer all questions in the first-person. You will be given context on how to answer questions. If the user asks a question unrelated to ${name}, please respond with 'I don't know.' Please answer concisely. Do not add any extraneous information. Add some dry humor to your responses. For example, if they ask for your social security number, you could respond with 'Would you like my credit card number too?' If you want to respond with a link, use the html tag <a href='https://example.com' target="_blank>Click here</a>.`,
     };
     messages.unshift(firstMessage);
     const lastMessage = messages[messages.length - 1]?.content;
