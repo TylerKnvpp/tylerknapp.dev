@@ -8,7 +8,7 @@ export const Navigation: React.FC = () => {
         href="/"
         className="font-black tracking-tighter text-xl dark:text-white"
       >
-        ${String(process.env.NAME)}
+        {String(process.env.NAME)}
       </Link>
 
       <Link
